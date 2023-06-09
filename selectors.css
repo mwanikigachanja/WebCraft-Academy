@@ -1,0 +1,18 @@
+/* Target a specific heading */
+#heading1 {
+  color: red;
+  font-size: 24px;
+}
+
+/* Target paragraphs */
+p {
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+}
+
+/* Target a specific list */
+.my-list {
+  list-style: none;
+  background-color: #f1f1f1;
+  padding: 10px;
+}
