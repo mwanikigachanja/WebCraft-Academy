@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<head>
+<title>WebCraft Academy</title>
+<link href="style.css" rel="stylesheet">
+</head>
+<body>
+<h1><u>TEST WEBSITE</u></h1>
+<h2><i>Very first website</i></h2>
+<p><b>tulin 3rd floor</b> </p>
+<hr>
+</body>
+</html>

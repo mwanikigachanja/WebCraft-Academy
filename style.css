@@ -1,32 +1,20 @@
-/* Reset default list styles */
-ul.navigation-menu {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+body{
+	background-color: mediumblue;
+	color: black;
+	font: 20px;
 }
+h1{
+	font-size: 40px;
+	text-align: center;
 
-/* Style the list items */
-ul.navigation-menu li {
-  display: inline-block;
-  margin-right: 10px;
 }
-
-/* Style the links */
-ul.navigation-menu li a {
-  text-decoration: none;
-  color: #333;
-  padding: 5px 10px;
-  border: 1px solid #333;
-  border-radius: 5px;
+h2{
+	font-size: 30px;
+	font-family: sans-serif;
+	text-align: right;
 }
-
-/* Add hover effect */
-ul.navigation-menu li a:hover {
-  background-color: #333;
-  color: #fff;
-}
-
-/* Add transition effect */
-ul.navigation-menu li a {
-  transition: background-color 0.3s ease, color 0.3s ease;
+p{
+	font-size: 40px;
+	background-color: greenyellow;
+	text-align: center;
 }
