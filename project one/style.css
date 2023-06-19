@@ -30,7 +30,7 @@ nav ul li a {
 
 /* Main Content */
 .hero {
-  background-image: url("hero-image.jpg");
+  background-image: url("img/twitter-bird.png");
   background-size: cover;
   background-position: center;
   height: 400px;
@@ -38,7 +38,7 @@ nav ul li a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: #fff;
+  color: #333;
 }
 
 .features {
