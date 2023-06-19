@@ -1,13 +1,22 @@
 <!doctype html>
 	<head> 
 		<title>Recipe page</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<style type="text/css">
+			h2{
+				text-align: right;
+			}
+		</style>
 </head>
 <body>
-			<header>
+	<div class="container">
+	<header>
 			<nav>
-				<a href="index.html">Home</a>
-					<a href="recipe.html"> recipe  </a><br>
-	<a href="contactus.html"> contact us </a><br>
+								<ul class="nav">
+					<li><a href="index.html"> Home </a></li>
+					<li> <a href="recipe.html"> Recipe </a></li>
+					<li> <a href="contactus.html"> Contact Us </a></li>
+				</ul>
 			</nav>
 		</header>
 	<section>
@@ -18,8 +27,8 @@
 		to cook soft and tender chapati you will follow this recipe.
 	</p>
 	<h2>ingredients </h2>
-	<p>
-		<ul>
+	<p class="ingredients">
+		<ul class="ingredients">
 			<li>2kg of flour</li>
 			<li>water</li>
 			<li>cooking oil</li>
@@ -27,8 +36,8 @@
 		</ul>
 	</p>
 	<h2> recipe </h2>
-	<p>
-		<ul>
+	<p id="recipe">
+		<ul id="recipe">
 			<li>mix the ingredient to make a dough</li>
 			<li>kneed the dough then roll into circle</li>
 			<li>roll the circled dough to circles shape</li>
@@ -48,8 +57,9 @@
 	to cook soft and tender beef stew you will follow the recipe
 </p>	
 <h2>ingredients</h2>
-<p>
-	<ul>
+<p c class="ingredients">
+	You need the items below for this recipe.
+	<ul class="ingredients">
 		<li>2kg beef</li>
 		<li>vegetables</li>
 		<li>water</li>
@@ -58,8 +68,8 @@
 	</ul>
 </p>
 <h2>recipe</h2>
-<p>
-	<ul>
+<p id="recipe">
+	<ul id="recipe">
 		<li>put the onion until it turns golden brown </li>
 		<li>add seasoning and vegetables while reguating the temperature</li>
 		<li>smither the potion while you add the beef meat</li>
@@ -73,6 +83,9 @@
 	</section>
 	
 
+	
+	</div>
+		
 </body>
 
 

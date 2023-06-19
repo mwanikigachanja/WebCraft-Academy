@@ -1,11 +1,65 @@
-body {
-	font-family: Arial, Helvetica, sans-serif;
-}
+h1{
+	font: solid blue 30px;
 
-td {
-	font-family: Arial, Helvetica, sans-serif;
 }
+body{
+	background-color: aliceblue;
+	align-content: center;
 
-th {
-	font-family: Arial, Helvetica, sans-serif;
+}
+.ingredients{
+	text-align: center;
+	text-decoration-color: yellow;
+	color: black;
+}
+#recipe{
+	text-align: right;
+	text-decoration-color: yellow;
+	color: black;
+}
+a:hover{
+	color: green;
+}
+a:focus{
+	color: darkred;
+}
+a:click{
+	color: yellow;
+}
+ul.nav{
+	list=style: none;
+	padding: 0px;
+	margin: 0px;
+}
+ul.nav li{
+	display: inline-block;
+	margin-right: 10px;
+
+}
+ul.nav li a {
+
+	text-decoration: none;
+	color: #333;
+	padding: 5px 10px;
+	border: 1px solid #333;
+	border-radius: 5px;
+	transition: background-color 0.3s ease, color 0.3s ease;
+}
+ul.nav li a:hover{
+	background-color: #333;
+	color: #fff;
+}
+.container{
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 20px;
+}
+header{
+	background-color: #fff;
+	color: #333;
+	padding: 10px;
+}
+nav{
+	background-color: #f1f1f1;
+	padding: 10px;
 }
