@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Scissors, Paper, Rock Game</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            color: #666;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin-top: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Scissors, Paper, Rock Game</h1>
+    <p>Choose your move:</p>
+    <button onclick="play('scissors')">Scissors</button>
+    <button onclick="play('paper')">Paper</button>
+    <button onclick="play('rock')">Rock</button>
+    <br>
+    <p id="message"></p>
+
+    <script>
+        function play(userChoice) {
+            // Generate a random move for the computer
+            const moves = ['scissors', 'paper', 'rock'];
+            const computerChoice = moves[Math.floor(Math.random() * moves.length)];
+
+            // Determine the winner
+            let message = '';
+            if (userChoice === computerChoice) {
+                message = "It's a tie!";
+            } else if (
+                (userChoice === 'scissors' && computerChoice === 'paper') ||
+                (userChoice === 'paper' && computerChoice === 'rock') ||
+                (userChoice === 'rock' && computerChoice === 'scissors')
+            ) {
+                message = "You win!";
+            } else {
+                message = "You lose!";
+            }
+
+            // Display the results
+            document.getElementById("message").innerHTML = `You chose ${userChoice}. The computer chose ${computerChoice}. ${message}`;
+        }
+    </script>
+</body>
+</html>

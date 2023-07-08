@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Blackjack Game</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            color: #666;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin-top: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Blackjack Game</h1>
+    <p>Player's Cards: <span id="playerCards"></span></p>
+    <p>Player's Score: <span id="playerScore"></span></p>
+    <br>
+    <p>Dealer's Cards: <span id="dealerCards"></span></p>
+    <p>Dealer's Score: <span id="dealerScore"></span></p>
+    <br>
+    <button onclick="deal()">Deal</button>
+    <button onclick="hit()">Hit</button>
+    <button onclick="stand()">Stand</button>
+    <br>
+    <p id="message"></p>
+
+    <script>
+        let playerCards = [];
+        let dealerCards = [];
+        let playerScore = 0;
+        let dealerScore = 0;
+        let gameOver = false;
+
+        // Card deck
+        const deck = [
+            '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A',
+            '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A',
+            '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A',
+            '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'
+        ];
+
+        function startGame() {
+            // Shuffle the deck
+            shuffle(deck);
+
+            // Deal initial cards
+            dealPlayerCard();
+            dealPlayerCard();
+            dealDealerCard();
+            showScore();
+        }
+
+        function dealPlayerCard() {
+            const card = deck.pop();
+            playerCards.push(card);
+            updateScore(card, 'player');
+            showCards('player');
+        }
+
+        function dealDealerCard() {
+            const card = deck.pop();
+            dealerCards.push(card);
+            updateScore(card, 'dealer');
+            showCards('dealer');
+        }
+
+        function showCards(player) {
+            const cards = (player === 'player') ? playerCards : dealerCards;
+            const cardsElement = (player === 'player') ? 'playerCards' : 'dealerCards';
+            document.getElementById(cardsElement).innerHTML = cards.join(' ');
+        }
+
+        function updateScore(card, player) {
+            const cardValue = getCardValue(card);
+            if (player === 'player') {
+                playerScore += cardValue;
+            } else {
+                dealerScore += cardValue;
+            }
+        }
+
+        function showScore() {
+            document.getElementById('playerScore').innerHTML = playerScore;
+            document.getElementById('dealerScore').innerHTML = dealerScore;
+        }
+
+        function getCardValue(card) {
+            if (card === 'A') {
+                return 11;
+            } else if (['K', 'Q', 'J'].includes(card)) {
+                return 10;
+            } else {
+                return parseInt(card);
+            }
+        }
+
+        function shuffle(array) {
+            let currentIndex = array.length, temporaryValue, randomIndex;
+
+            while (currentIndex !== 0) {
+                randomIndex = Math.floor(Math.random() * currentIndex);
+                currentIndex--;
+
+                temporaryValue = array[currentIndex];
+                array[currentIndex] = array[randomIndex];
+                array[randomIndex] = temporaryValue;
+            }
+
+            return array;
+        }
+
+        function deal() {
+            if (!gameOver) {
+                startGame();
+                document.getElementById('message').innerHTML = '';
+            }
+        }
+
+        function hit() {
+            if (!gameOver) {
+                dealPlayerCard();
+                if (playerScore > 21) {
+                    document.getElementById('message').innerHTML = 'You busted! Dealer wins.';
+                    gameOver = true;
+                }
+            }
+        }
+
+        function stand() {
+            if (!gameOver) {
+                while (dealerScore < 17) {
+                    dealDealerCard();
+                }
+
+                if (dealerScore > 21 || dealerScore < playerScore) {
+                    document.getElementById('message').innerHTML = 'You win!';
+                } else if (dealerScore > playerScore) {
+                    document.getElementById('message').innerHTML = 'Dealer wins!';
+                } else {
+                    document.getElementById('message').innerHTML = 'It\'s a tie!';
+                }
+
+                gameOver = true;
+            }
+        }
+    </script>
+</body>
+</html>
